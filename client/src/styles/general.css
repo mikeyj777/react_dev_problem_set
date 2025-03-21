@@ -1,0 +1,20 @@
+button {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.increment {
+  background-color: green;
+  color: white;
+}
+
+.decrement {
+  background-color: red;
+  color: white;
+}
+
+.counter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
