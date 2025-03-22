@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Welcome from './components/002';
 import P006 from './components/006';
 import P007 from './components/007';
+import P008 from './components/008';
 import './App.css';
 import './styles/global.css';
 
@@ -13,7 +14,7 @@ const App = () => {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/ans" element={<P007 />} />
+          <Route path="/ans" element={<P008 />} />
         </Routes>
       </div>
     </Router>
