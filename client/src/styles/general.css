@@ -18,3 +18,13 @@ button {
   align-items: center;
   gap: 10px;
 }
+
+.light {
+  background-color: tan;
+  color: black;
+}
+
+.dark {
+  background-color: brown;
+  color: white;
+}
