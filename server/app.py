@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 
-from controllers.data_controller import check_existing_data
+from controllers.snapple_facts import get_snapple_fact
 
 import logging
 
@@ -18,18 +18,13 @@ CORS(app, resources={
     }
 })
 
-@app.route('/api/users', methods=['POST'])
-def user_route():
-    return get_user()
-
-@app.route('/api/load-emotions', methods=['GET'])
-def load_emotions_route():
-    return load_emotions() 
-
+@app.route('/api/fact', methods=['POST'])
+def snapple_fact_route():
+    return get_snapple_fact()
 
 @app.route("/")
 def home():
     return jsonify({"message": "This is the Emo Pop API."})
 
 if __name__ == '__main__':
-    app.run("0.0.0.0", debug=False)
+    app.run("0.0.0.0", debug=True)
