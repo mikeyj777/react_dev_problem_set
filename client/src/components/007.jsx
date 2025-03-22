@@ -27,12 +27,15 @@ const apiUrl = "http://localhost:5000";
 const P007 = () => {
   // state managed display message
   const [factsArray, setFactsArray] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [err, setErr] = useState(null);
 
   // fetch data from api
   const handleSubmit = async () => {
 
     try {
+      setIsLoading(true);
+      setErr('');
       const response = await fetch(`${apiUrl}/api/fact`, {
         method: 'POST',
         headers: {
@@ -41,22 +44,31 @@ const P007 = () => {
         body: JSON.stringify({ query: '' }) // leaving the fuller "body" field here for future use in more advanced post calls
       });
       const data = await response.json();
-      const status = data.status;
-      if (status == 'success') {
-        setFactsArray([...factsArray, data.result]);
+      if (!response.ok) setErr(`HTTP Error.  Status: ${response.status}`)
+      if (response.ok && data.status) { 
+        const status = data.status;
+        if (status === 'success') {
+          setFactsArray([...factsArray, data.result]);
+        }
       }
     }
     catch {
-      console.log('could not get data from API.');
+      setErr('Could not get data from API.');
+    }
+    finally {
+      setIsLoading(false);
     }
   };
+
+  
+  
 
 
   return (
     <div>
       {/*message */}
       <div>
-        {factsArray.map((fact, index) =>{
+        {isLoading ? "Loading Data" : factsArray.map((fact, index) =>{
           return (<p key={index}>{fact}</p>)
         })}
       </div>
@@ -66,6 +78,9 @@ const P007 = () => {
         onClick={handleSubmit}>
         New Facts, no Waiting!
       </button>
+
+      {/* error output */}
+      <div>{err && <p>{err}</p>}</div>
 
     </div>
   )

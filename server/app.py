@@ -21,7 +21,6 @@ CORS(app)
 
 @app.route('/api/fact', methods=['POST'])
 def snapple_fact_route():
-    logging.debug('in snapple facts.  ')
     return get_snapple_fact()
 
 @app.route("/")
