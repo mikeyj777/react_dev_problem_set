@@ -31,12 +31,6 @@ button {
   border-radius: 0%;
 }
 
-/*
-const sizes = ["small", "large"];
-const colors = ["red", "blue"];
-const variants = ["increment", "decrement"];
-*/
-
 .increment {
   background-color: green;
   color: white;

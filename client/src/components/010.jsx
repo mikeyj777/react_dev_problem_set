@@ -46,7 +46,7 @@ const P010 = () => {
         size={size}
         color={color}
         variant={variant}
-        handleClick={handleClick}
+        onClick={handleClick}
         text={"From P010"}>
       </Button>
     </div>
