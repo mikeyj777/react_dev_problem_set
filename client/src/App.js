@@ -6,6 +6,7 @@ import P006 from './components/006';
 import P007 from './components/007';
 import P008 from './components/008';
 import P009 from './components/009';
+import P010 from './components/010';
 import './App.css';
 import './styles/global.css';
 
@@ -15,7 +16,7 @@ const App = () => {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/ans" element={<P009 />} />
+          <Route path="/ans" element={<P010 />} />
         </Routes>
       </div>
     </Router>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from './ui/Button';
 
 /*
 
@@ -18,23 +19,39 @@ The following assumptions apply unless otherwise noted:
 
 Problem:
 
-
-
-Notes:
-
-
+Implement a reusable Button component that accepts different styling props (size, color, variant) and an onClick handler. Demonstrate how to use it in a parent component.
 
 */
 
-const P00x = () => {
+const sizes = ["small", "large"];
+const colors = ["redColor", "blueColor"];
+const variants = ["rounded", "square"];
 
+const P010 = () => {
+
+  const [size, setSize] = useState(sizes[0]);
+  const [color, setColor] = useState(colors[0]);
+  const [variant, setVariant] = useState(variants[1]);
+
+  const handleClick = () => {
+    setSize(sizes[Math.floor(Math.random() * sizes.length)]);
+    setColor(colors[Math.floor(Math.random() * colors.length)]);
+    setVariant(variants[Math.floor(Math.random() * variants.length)]);
+  }
 
   return (
     <div>
-      <p>bonjour</p>
+
+      <Button 
+        size={size}
+        color={color}
+        variant={variant}
+        handleClick={handleClick}
+        text={"From P010"}>
+      </Button>
     </div>
   );
 
 }
 
-export default P00x;
+export default P010;

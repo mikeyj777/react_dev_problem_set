@@ -3,6 +3,40 @@ button {
   font-size: 20px;
 }
 
+.small {
+  padding: 1px;
+  font-size: 10px;
+}
+
+.large {
+  padding: 30px;
+  font-size: 25px;
+}
+
+.redColor {
+  background-color: red;
+  color: white;
+}
+
+.blueColor {
+  background-color: blue;
+  color: yellow;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+.square {
+  border-radius: 0%;
+}
+
+/*
+const sizes = ["small", "large"];
+const colors = ["red", "blue"];
+const variants = ["increment", "decrement"];
+*/
+
 .increment {
   background-color: green;
   color: white;
